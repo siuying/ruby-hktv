@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://webservices.hktv.com.hk/playlist/request
+    body:
+      encoding: UTF-8
+      string: d=USB%20Android%20TV&ki=12&mdl=Ruby&mf=hktv-ruby&mxres=1920&net=fixed&os=0.1.0&t=761a86f1b362226430dadc45b8d803f0&udid=64e1b650-241f-44d1-b276-540884707722&uid=1086005&vid=1670&ts=1420049220&s=acf9ff12b349650f86a22c0b124c8d4a
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Dec 2014 18:07:00 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Headers:
+      - Authorization
+      Content-Length:
+      - '450'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"m3u8":"http://ott-video-lb.hktvmall.com:8080/hermes_cdn/v1/cdn/containers/vod/file/PD120012-FATE-01A-pt2for2/000001173.m3u8?uid=1086005&vid=1670&d=tv&t=c29f901033776a40ab145c962805149f&mxres=1920&net=fixed&udid=64e1b650-241f-44d1-b276-540884707722&ts=1420049220600&s=6ef4c9d3d7d3af4f48432158b30e905c","ads_total_duration":0,"ads_cat":[],"ads":[],"track_points":[],"category":"DRAMA","m3u8_token":"c29f901033776a40ab145c962805149f","error_code":"0"}'
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:07:00 GMT
+recorded_with: VCR 2.9.3

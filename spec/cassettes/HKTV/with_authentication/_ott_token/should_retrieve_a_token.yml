@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hktvmall.com/hktvwebservices/v1/hktv/ott/token?rand=1420049220
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Wed, 31 Dec 2014 18:07:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '322'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Etag:
+      - '"04e2b6a7ea741e0d9860e31364f6d46ee"'
+      Httpd-Srv-Id:
+      - ecweb-tu03
+      X-Indicator-Srv:
+      - ecweb-tu03
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "user_id": "1086005",
+          "user_level": "2",
+          "token": "8d5e4c21957efd2b96758e91968e9a5d",
+          "expiry_date": 1422209218,
+          "fullResponse": "{\"user_id\":\"1086005\",\"user_level\":\"2\",\"token\":\"8d5e4c21957efd2b96758e91968e9a5d\",\"expiry_date\":1422209218}",
+          "httpStatusCode": "200",
+          "mallUid": "8856049811460"
+        }
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:07:00 GMT
+- request:
+    method: get
+    uri: https://www.hktvmall.com/hktvwebservices/v1/hktv/ott/token?rand=1420049220
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Wed, 31 Dec 2014 18:07:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Httpd-Srv-Id:
+      - ecweb-tu05
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "errors": [
+            {
+              "message": "Invalid access token: b9008875-1170-4bab-94ee-ce8ef5ccb7b5",
+              "type": "InvalidTokenError"
+            }
+          ]
+        }
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:07:00 GMT
+- request:
+    method: get
+    uri: https://www.hktvmall.com/hktvwebservices/v1/hktv/ott/token?rand=1420049220
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Wed, 31 Dec 2014 18:07:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '322'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Etag:
+      - '"0affe6a2d85c38065ae5c577f6fffb40d"'
+      Httpd-Srv-Id:
+      - ecweb-tu03
+      X-Indicator-Srv:
+      - ecweb-tu03
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "user_id": "1086005",
+          "user_level": "2",
+          "token": "761a86f1b362226430dadc45b8d803f0",
+          "expiry_date": 1422209220,
+          "fullResponse": "{\"user_id\":\"1086005\",\"user_level\":\"2\",\"token\":\"761a86f1b362226430dadc45b8d803f0\",\"expiry_date\":1422209220}",
+          "httpStatusCode": "200",
+          "mallUid": "8856049811460"
+        }
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:07:00 GMT
+recorded_with: VCR 2.9.3

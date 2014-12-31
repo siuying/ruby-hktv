@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.hktvmall.com/hktvwebservices/oauth/token?rand=1420049220
+    body:
+      encoding: UTF-8
+      string: grant_type=password&username=<HKTV_USER_NAME>&password=<HKTV_PASSWORD>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Wed, 31 Dec 2014 18:07:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '170'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Etag:
+      - '"0ad2c0e483c1e018b3aefc39d0909e11e"'
+      Httpd-Srv-Id:
+      - ecweb-tu03
+      X-Indicator-Srv:
+      - ecweb-tu03
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "access_token": "b9008875-1170-4bab-94ee-ce8ef5ccb7b5",
+          "token_type": "bearer",
+          "refresh_token": "1a2d4f93-9ad8-48ed-ad75-21224b06c068",
+          "expires_in": 2592000
+        }
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:07:00 GMT
+recorded_with: VCR 2.9.3

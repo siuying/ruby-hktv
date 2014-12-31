@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://webservices.hktv.com.hk/account/token
+    body:
+      encoding: UTF-8
+      string: ki=12&ts=1420049219&s=c9b29b631f89df409ce242d48d8e5ff6&muid=0
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Dec 2014 18:06:58 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Headers:
+      - Authorization
+      Content-Length:
+      - '100'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"user_id":"1","user_level":"1","token":"d2c5c28659bee9ea24539ca1382a0ddd","expiry_date":1422209218}'
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:06:59 GMT
+- request:
+    method: post
+    uri: http://webservices.hktv.com.hk/playlist/request
+    body:
+      encoding: UTF-8
+      string: d=USB%20Android%20TV&ki=12&mdl=Ruby&mf=hktv-ruby&mxres=1920&net=fixed&os=0.1.0&t=d2c5c28659bee9ea24539ca1382a0ddd&udid=5dc78832-aa04-443b-8750-2f5d1e1d1610&uid=1&vid=1&ts=1420049219&s=1647d0acf5c28de2c6e520f8973f0205
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Dec 2014 18:06:58 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Headers:
+      - Authorization
+      Content-Length:
+      - '378'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"m3u8":"http://ott-video-lb.hktvmall.com:8080/enc2/index2.m3u8?uid=1&vid=1&d=tv&t=12e9a7f66f3a892b396e94d81206eb6c&mxres=1920&net=fixed&udid=5dc78832-aa04-443b-8750-2f5d1e1d1610&ts=1420049218594&s=9a19db3ccb4675e0e9b16775055e52a7","ads_total_duration":0,"ads_cat":[],"ads":[],"track_points":[],"category":"LIVE","m3u8_token":"12e9a7f66f3a892b396e94d81206eb6c","error_code":"0"}'
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:07:00 GMT
+recorded_with: VCR 2.9.3

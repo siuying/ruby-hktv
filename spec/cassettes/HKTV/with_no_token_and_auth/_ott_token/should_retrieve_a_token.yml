@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://webservices.hktv.com.hk/account/token
+    body:
+      encoding: UTF-8
+      string: ki=12&ts=1420049217&s=61811a3c6b39aa20a5727a60cd772f4c&muid=0
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Dec 2014 18:06:55 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Headers:
+      - Authorization
+      Content-Length:
+      - '100'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"user_id":"1","user_level":"1","token":"d2c5c28659bee9ea24539ca1382a0ddd","expiry_date":1422209215}'
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:06:57 GMT
+- request:
+    method: post
+    uri: http://webservices.hktv.com.hk/account/token
+    body:
+      encoding: UTF-8
+      string: ki=12&ts=1420049217&s=61811a3c6b39aa20a5727a60cd772f4c&muid=0
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 Dec 2014 18:06:55 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST
+      Access-Control-Allow-Headers:
+      - Authorization
+      Content-Length:
+      - '100'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"user_id":"1","user_level":"1","token":"d2c5c28659bee9ea24539ca1382a0ddd","expiry_date":1422209215}'
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 18:06:57 GMT
+recorded_with: VCR 2.9.3
