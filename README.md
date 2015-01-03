@@ -7,7 +7,7 @@ Command line utilities to find and download HKTV videos.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'hktv', github: "siuying/ruby-hktv"
+gem 'hktv'
 ```
 
 And then execute:
