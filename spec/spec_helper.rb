@@ -14,12 +14,15 @@ VCR.configure do |c|
     i.request.uri.sub!(/:\/\/.*#{Regexp.escape(u.host)}/, "://#{u.host}" )
   end
 
+  username = ENV["HKTV_USER_NAME"] ? ENV["HKTV_USER_NAME"] : "<username>"
+  password = ENV["HKTV_PASSWORD"] ? ENV["HKTV_PASSWORD"] : "<password>"
+
   c.filter_sensitive_data('<HKTV_PASSWORD>') do
-    CGI.escape ENV['HKTV_PASSWORD']
+    CGI.escape password
   end
 
   c.filter_sensitive_data('<HKTV_USER_NAME>') do
-    CGI.escape ENV['HKTV_USER_NAME']
+    CGI.escape username
   end
 
   # Matches authenticated requests regardless of their Basic auth string (https://user:pass@domain.tld)

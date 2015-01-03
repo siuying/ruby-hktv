@@ -76,7 +76,7 @@ class HKTV
       "password" => password
     }
 
-    auth = post_json("https://www.hktvmall.com:443/hktvwebservices/oauth/token?rand=#{Time.now.to_i}", body: options, basic_auth: {username: API_USERNAME, password: API_PASSWORD})
+    auth = self.class.post("https://www.hktvmall.com:443/hktvwebservices/oauth/token?rand=#{Time.now.to_i}", body: options, basic_auth: {username: API_USERNAME, password: API_PASSWORD})
     @access_token = auth["access_token"]
     @expires_date = Time.now + auth["expires_in"]
     @refresh_token = auth["refresh_token"]
@@ -90,7 +90,7 @@ class HKTV
     # hktv api just fail for unknown reason, retry to workaround it
     Retriable.retriable(tries: 20, base_interval: 1.0) do
       if authenticated?
-        result = get_json("https://www.hktvmall.com:443/hktvwebservices/v1/hktv/ott/token?rand=#{Time.now.to_i}", headers: headers)
+        result = self.class.get("https://www.hktvmall.com:443/hktvwebservices/v1/hktv/ott/token?rand=#{Time.now.to_i}", headers: headers)
       else
         ts = Time.now.to_i
         options = {
@@ -221,18 +221,6 @@ class HKTV
     else
       return {}
     end
-  end
-
-  def post_json(path, options={})
-    response = self.class.post(path, options)
-    data = response.body
-    JSON.parse(data)
-  end
-
-  def get_json(path, options={})
-    response = self.class.get(path, options)
-    data = response.body
-    JSON.parse(data)
   end
 
   def sign_request(path, timestamp, params=[])
