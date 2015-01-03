@@ -14,9 +14,9 @@ And then execute:
 
     $ bundle
 
-Or clone the repo and install it via:
+Or install it via:
     
-    $ gem build hktv.gemspec && gem install hktv-1.0.0.gem
+    $ gem install hktv
 
 
 ## Prerequisite
