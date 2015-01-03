@@ -62,25 +62,24 @@ class HKTV
       end
 
       command :list do |c|
-        c.syntax = 'hktv list'
+        c.syntax = 'hktv list [episode-title]'
         c.description = 'Print a comma sepeated list of programs of HKTV'
-        c.option '--title title', String, 'Only return programs matching given title regexp'
-        c.option '--keys keys', String, 'Output data keys, by default "title,video_id", available: [title, video_id, category, thumbnail, url, duration]'
+        c.option '--keys keys', String, 'Output data keys, by default "title", available: [title, video_id, category, thumbnail, url, duration]'
         c.option '--playlist', 'Fetch the playlist URL. By default the URL is not fetched.'
 
         c.action do |args, options|
-          options.default category: "DRAMA", playlist: false, keys: "title,video_id"
+          options.default category: "DRAMA", playlist: false, keys: "title"
           hktv = self.load
           programs = extract_root_videos(hktv.programs)
           keys = options.keys.split(",")
+          title = args[0]
 
           if options.category
             programs = programs.select {|program| program["category"] == options.category }
           end
 
-          if options.title
-            regexp = Regexp.new(options.title)
-            programs = programs.select {|program| program["title"] =~ regexp }
+          if title
+            programs = programs.select {|program| program["title"].include?(title) }
           end
 
           if options.playlist
@@ -119,8 +118,7 @@ class HKTV
 
           filename = filename_with_title(title, ".mp4") if filename.nil?
           programs = extract_root_videos(hktv.programs)
-          regexp = Regexp.new(title)
-          programs = programs.select {|program| program["title"] =~ regexp }
+          programs = programs.select {|program| program["title"].include?(title) }
 
           if programs.size == 0
             puts "No video matching \"#{title}\""
@@ -150,7 +148,7 @@ class HKTV
     end
 
     def filename_with_title(title, ext=".ts")
-      title.gsub(/\s/, "_") + ext
+      title.gsub(/\s/, "_").gsub(/\//, "") + ext
     end
 
     def download_and_merge_programs(videos, output)
@@ -178,7 +176,7 @@ class HKTV
         end
       ensure 
         puts "Remove temp file: #{temp_files.join(" ")}"
-        `rm #{temp_files.join(" ")}`
+        `rm \"#{temp_files.join("\" \"")}\"`
       end
     end
   end

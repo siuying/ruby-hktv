@@ -18,6 +18,13 @@ Or clone the repo and install it via:
     
     $ gem build hktv.gemspec && gem install hktv-1.0.0.gem
 
+
+## Prerequisite
+
+- Ruby 2.x
+- Only tested on OS X Yosemite, it may work on Linux.
+- Requries ``ffmpeg`` for combine video.
+
 ## Usage
 
 ### Login to HKTV
@@ -30,12 +37,12 @@ Login to HKTV. This is required for download video.
 
 Print a comma sepeated list of programs.
 
-    $ hktv list --title "選戰"
-    選戰 第1集 第1節,1214
-    選戰 第1集 第2節,1215
+    $ hktv list "選戰"
+    選戰 第1集 第1節
+    選戰 第1集 第2節
     ...
-    選戰 第7集 第3節,1246
-    選戰 第7集 第4節,1247
+    選戰 第7集 第3節
+    選戰 第7集 第4節
 
 ### Download an Episode
 
