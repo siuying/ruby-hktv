@@ -53,13 +53,17 @@ class HKTV
 
   # return true if client has authenticated, false otherwise
   def authenticated?
-    if @expires_date && Time.now > @expires_date
+    if expired?
       @access_token = nil
       @expires_date = nil
       @refresh_token = nil
     end
 
     !@access_token.nil?
+  end
+
+  def expired?
+   !@expires_date || Time.now > @expires_date
   end
 
   # return true if client needs ott token

@@ -106,6 +106,11 @@ class HKTV
 
         c.action do |args, options|
           hktv = self.load
+          
+          if hktv.expired?
+            puts "Login expired! Run \"hktv login\" first."
+            raise "Login Expired"
+          end
 
           unless hktv.authenticated?
             puts "You have not login! Try \"hktv login\"" 
@@ -118,7 +123,7 @@ class HKTV
 
           filename = filename_with_title(title, ".mp4") if filename.nil?
           programs = extract_root_videos(hktv.programs)
-          programs = programs.select {|program| program["title"].include?(title) }
+          programs = programs.select {|program| program["title"].start_with?(title) } || programs.select {|program| program["title"].include?(title) }
 
           if programs.size == 0
             puts "No video matching \"#{title}\""
